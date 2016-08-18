@@ -1,5 +1,5 @@
 <template name="Cvs">
-    {{#if $Session.get 'newRecipeForm'}}
+    {{#if $.Session.get 'newCvForm'}}
         {{> NewCvForm}}
     {{else}}
         <button class="new-recipe">New CV</button>
