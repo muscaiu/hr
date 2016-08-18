@@ -1,0 +1,19 @@
+<template name="Cvs">
+    {{#if $Session.get 'newRecipeForm'}}
+        {{> NewCvForm}}
+    {{else}}
+        <button class="new-recipe">New CV</button>
+    {{/if}}
+    <section class="cvs">
+        <!--if the data is loaded-->
+        {{#if Template.subscriptionsReady}}
+            {{#each cvs}}
+                {{> Cv}}
+            {{/each}}
+        <!--else display loading screen-->
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
+    </section>
+
+</template>

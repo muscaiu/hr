@@ -1,0 +1,28 @@
+<template name="Cv">
+    <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
+        <h3>{{name}}</h3>
+        <!--Show Edit Form if editMode = true-->
+        {{#if editMode}}
+            {{> quickForm collection="Cvs"
+                id=updateCvId
+                type="update"
+                doc = this
+                autosave = true}}
+        {{else}}
+            <p>{{email}}</p>
+            <p>
+                {{#each experiences}} 
+                    <span class="ingredient">{{name}} - {{ammount}}</span>
+                {{/each}}
+            </p>
+            <a href="/cv/{{_id}}">View Details</a>
+        {{#if inMenu}}
+             <button class="btn-deny toggle-menu">Remove From Favorites</button>
+        {{else}}
+              <button class="btn-primary toggle-menu">Add To Favorites</button>
+        {{/if}}
+        {{/if}}
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash"></i>
+    </article>
+</template>

@@ -1,0 +1,16 @@
+<template name="Favorites">
+    <h1 class="page-title">Favorites</h1>
+    
+    {{#each cvs}}
+        {{> FavoriteItem}}
+    {{else}}
+        <h3>No cv's <a href="/cvs">cvs</a> added to Favorites</h3>
+    {{/each}}
+</template>
+
+<template name="FavoriteItem">
+    <div class="menu-item">
+        <h3> {{ name }} </h3>
+        <p> {{ email }} </p>
+    </div>
+</template>
