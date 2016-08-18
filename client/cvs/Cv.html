@@ -1,6 +1,6 @@
 <template name="Cv">
     <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
-        <h3>{{name}} - {{age}}</h3> 
+        <h1>{{name}} - {{age}}</h1> 
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
             {{> quickForm collection="Cvs"
@@ -17,7 +17,7 @@
             </p>-->
             <!--<a href="/cv/{{_id}}">View Details</a>-->
         {{#if inMenu}}
-             <button class="btn-deny toggle-menu">Scoate de la Aangajati</button>
+             <button class="btn-deny toggle-menu">Scoate de la Angajati</button>
         {{else}}
               <button class="btn-primary toggle-menu">Adauga la Angajati</button>
         {{/if}}
