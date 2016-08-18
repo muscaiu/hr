@@ -1,7 +1,10 @@
 //publish all cvs
 Meteor.publish('cvs', function () {
-    //get only the cvs created by the user
-    return Cvs.find({ author: this.userId});
+    // return Cvs.find(
+    //                 { author: this.userId }, 
+    //                 {sort: {createdAt: -1}}
+    //                 );
+    return Cvs.find({}, {sort: {createdAt: -1}});
 });
 
 //Publish single cv by id

@@ -25,9 +25,26 @@ Meteor.methods({
 
 Experience = new SimpleSchema({
     name: {
+        label: "Angajator",
+        type: String
+    },
+    job: {
+        label: "Job",
         type: String
     },
     ammount: {
+        label: "Durata",
+        type: String
+    }
+});
+
+Languages = new SimpleSchema({
+    language: {
+        label: "Limba",
+        type: String
+    },
+    level: {
+        label: "Nivel",
         type: String
     }
 });
@@ -35,7 +52,7 @@ Experience = new SimpleSchema({
 CvSchema = new SimpleSchema({
     name:{
         type: String,
-        label: "Name"
+        label: "Nume"
     },
     email:{
         type: String,
@@ -43,19 +60,21 @@ CvSchema = new SimpleSchema({
     },
     age: {
         type: String,
-        label: "Age"
-    },
-    languageLevel: {
-        type: String,
-        label: "Language Level"
+        label: "Varsta"
     },
     sex: {
         type: String,
         label: "Sex"
     },
     experiences:{
+        label: "Experienta",
         type: [Experience]
     },
+    languages:{
+        label: "Adauga Limba",
+        type: [Languages]
+    }
+    ,
     inMenu:{
         type: Boolean,
         defaultValue: false,
@@ -76,12 +95,9 @@ CvSchema = new SimpleSchema({
     },
     createdAt: {
         type: Date,
-        label: "Created At",
+        label: "Data Interviu",
         autoValue: function(){
             return new Date()
-        },
-        autoform:{
-            type: "hidden"
         }
     }
 });
