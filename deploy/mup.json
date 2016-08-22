@@ -3,8 +3,8 @@
   "servers": [
     {
       "host": "139.59.149.124",
-      "username": "x",
-      "password": "x",
+      "username": "root",
+      "password": "Searflesh!999",
       // or pem file (ssh based authentication)
       // WARNING: Keys protected by a passphrase are not supported
       //"pem": "~/.ssh/id_rsa"

@@ -31,14 +31,14 @@ aldeed:autoform
 accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons
-# msavin:jetsetter
 zimme:active-route
 gwendall:auth-client-callbacks
 meteortoys:allthings
-
 check
-
 matdutour:popup-confirm
-meteorhacks:kadira
-kadira:debug
 session 
+jalik:ufs
+jalik:ufs-gridfs
+
+# meteorhacks:kadira
+# msavin:jetsetter

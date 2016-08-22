@@ -9,7 +9,21 @@ Template.Cv.events({
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     },
     'click .fa-trash': function(){
-        Meteor.call('deleteCv', this._id)
+        var self = this;
+        new Confirmation({
+            message: "Esti sigur?",
+            //title: "Confirma",
+            cancelText: "Cancel",
+            okText: "Sterge",
+            //success: true, // whether the button should be green or red
+            focus: "cancel" // which button to autofocus, "cancel" (default) or "ok", or "none"
+            }, 
+            function (ok) {
+                if(!ok) return
+                    //else delete CV
+                    Meteor.call('deleteCv', self._id);
+            });
+       
     },
     'click .fa-pencil': function(event, template){
         template.editMode.set(!template.editMode.get());
