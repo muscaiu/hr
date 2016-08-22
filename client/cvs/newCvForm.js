@@ -3,3 +3,5 @@ Template.NewCvForm.events({
         Session.set('newCvForm', false);
     }
 })
+
+

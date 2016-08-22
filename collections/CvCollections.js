@@ -26,53 +26,67 @@ Meteor.methods({
 Experience = new SimpleSchema({
     name: {
         label: "Angajator",
-        type: String
+        type: String,
+        optional: true,
     },
     job: {
         label: "Job",
-        type: String
+        type: String,
+        optional: true,
     },
     ammount: {
         label: "Durata",
-        type: String
+        type: String,
+        optional: true,
     }
 });
 
 Languages = new SimpleSchema({
     language: {
         label: "Limba",
-        type: String
+        type: String,
+        optional: true,
     },
     level: {
         label: "Nivel",
-        type: String
+        type: String,
+        optional: true,
     }
 });
 
 CvSchema = new SimpleSchema({
     name:{
         type: String,
-        label: "Nume"
+        label: "Nume",
     },
     email:{
         type: String,
-        label: "Email"
+        label: "Email",
+        optional: true,
     },
     age: {
-        type: String,
-        label: "Varsta"
+        type: Number,
+        min: 18,
+        label: "Varsta",
+        optional: true,
     },
     sex: {
         type: String,
-        label: "Sex"
+        label: "Sex",
+        optional: true,
+        allowedValues: [
+            "M", "F"
+        ]
     },
     experiences:{
         label: "Experienta",
-        type: [Experience]
+        type: [Experience],
+        optional: true,
     },
     languages:{
         label: "Adauga Limba",
-        type: [Languages]
+        type: [Languages],
+        optional: true,
     }
     ,
     inMenu:{

@@ -1,10 +1,53 @@
 <template name="NewCvForm">
     <div class="new-recipe-container">
          <i class="fa fa-close"></i>
-        {{> quickForm collection="Cvs"
+        <!--{{> quickForm collection="Cvs"
             id="insertCvForm"
             type="insert"
             class="new-recipe-form"
         }}
+        <br>
+        <div class="jumbotron">
+            {{> uploadForm}}
+            {{> fileTable}}
+        </div>-->
+
+        {{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
+            {{> afQuickField name="name"}}
+            {{> afQuickField name="email"}}
+            {{> uploadForm}}
+        {{/autoForm}}
+
+        {{> fileTable}}
     </div>
+
 </template>
+
+        <!--{{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
+            <div class="form-group {{#if afFieldIsInvalid name='firstName'}}has-error{{/if}}">
+                <label class="control-label">{{afFieldLabelText name='firstName'}}</label>
+                {{> afFieldInput name='firstName'}}
+                {{#if afFieldIsInvalid name='firstName'}}
+                <span class="help-block">{{{afFieldMessage name='firstName'}}}</span>
+                {{/if}}
+            </div>
+            <div class="form-group {{#if afFieldIsInvalid name='lastName'}}has-error{{/if}}">
+                <label class="control-label">{{afFieldLabelText name='lastName'}}</label>
+                {{> afFieldInput name='lastName'}}
+                {{#if afFieldIsInvalid name='lastName'}}
+                <span class="help-block">{{{afFieldMessage name='lastName'}}}</span>
+                {{/if}}
+            </div>
+            <div class="form-group {{#if afFieldIsInvalid name='age'}}has-error{{/if}}">
+                <label class="control-label">{{afFieldLabelText name='age'}}</label>
+                {{> afFieldInput name='age'}}
+                {{#if afFieldIsInvalid name='age'}}
+                <span class="help-block">{{{afFieldMessage name='age'}}}</span>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add Person</button>
+                <button type="reset" class="btn btn-default">Reset Form</button>
+            </div>
+        {{/autoForm}}-->
+
