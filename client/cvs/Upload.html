@@ -1,0 +1,100 @@
+<!--Upload Form-->
+<template name="uploadForm">
+        <button class="btn btn-default" name="upload" type="button">
+            <span class="glyphicon glyphicon-upload"></span>
+            <span>Upload</span>
+        </button>
+</template>
+
+<!--FileTable-->
+<template name="fileTable">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <!--<th>Preview</th>-->
+            <th style="text-align: left">Name</th>
+            <!--<th width="10%">Type</th>-->
+            <th style="text-align: left">Type</th>
+            <th style="text-align: left">Size</th>
+            <th style="text-align: left">Progress</th>
+            <!--<th width="10%" style="text-align: right">Access</th>-->
+            <th width="10%" style="text-align: left">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each files}}
+            {{> fileTableRow}}
+        {{else}}
+            <tr>
+                <td colspan="8">
+                    <span class="empty">No file</span>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="fileTableRow">
+    <tr>
+        <!--<td>
+            {{#if uploading}}
+                <img class="thumbnail" width="32" height="32" src="/spinner.gif">
+            {{else}}
+                {{#if isAudio}}
+                    <audio src="{{url}}?token={{token}}" controls></audio>
+                {{/if}}
+                {{#if isImage}}
+                    <img class="thumbnail" width="32" height="32" src="{{thumb.url}}?token={{thumb.token}}">
+                {{/if}}
+                {{#if isText}}
+                    <img class="thumbnail" width="32" height="32" src="/file.png">
+                {{/if}}
+                {{#if isVideo}}
+                    <video class="thumbnail" width="32" height="32" src="{{url}}?token={{token}}" controls></video>
+                {{/if}}
+            {{/if}}
+        </td>-->
+        <td><a href="{{url}}?token={{token}}" target="_blank">{{name}}</a></td>
+        <!--<td>{{type}}</td>-->
+        <td>{{extension}}</td>
+        <td style="text-align: left; white-space: nowrap">{{formatSize size}}</td>
+        <td style="text-align: left">{{progress}}%</td>
+        <!--<td style="text-align: right">
+            {{#if userId}}
+                <span class="label label-private">Private</span>
+            {{else}}
+                <span class="label label-public">Public</span>
+            {{/if}}
+        </td>-->
+        <td style="text-align: left">
+            <div class="btn-group" role="group">
+                {{#if canAbort}}
+                    {{#unless complete}}
+                        {{#if uploading}}
+                            <button class="btn btn-default" name="stop" type="button" title="top">
+                                <span class="glyphicon glyphicon-pause"></span>
+                                <span></span>
+                            </button>
+                        {{else}}
+                            <button class="btn btn-default" name="start" type="button" title="Start">
+                                <span class="glyphicon glyphicon-play"></span>
+                                <span></span>
+                            </button>
+                        {{/if}}
+                        <button class="btn btn-default" name="abort" type="button" title="Abort">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            <span></span>
+                        </button>
+                    {{/unless}}
+                {{/if}}
+                {{#if canDelete}}
+                    <button class="btn btn-default" name="delete" type="button" title="Delete">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        <span></span>
+                    </button>
+                {{/if}}
+            </div>
+        </td>
+    </tr>
+</template>
