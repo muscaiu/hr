@@ -10,6 +10,7 @@ Template.Cv.events({
     },
     'click .fa-trash': function(){
         var self = this;
+        console.log(this._id);
         new Confirmation({
             message: "Esti sigur?",
             //title: "Confirma",
@@ -22,10 +23,10 @@ Template.Cv.events({
                 if(!ok) return
                     //else delete CV
                     Meteor.call('deleteCv', self._id);
-            });
-       
+            });       
     },
     'click .fa-pencil': function(event, template){
+        console.log(this._id);
         template.editMode.set(!template.editMode.get());
     }
 });

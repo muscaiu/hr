@@ -1,4 +1,7 @@
 get id of the current cv
 add the id in the db along with the uploaded file data
-
 when publish user, also search for user id in the files collection
+
+OR 
+
+just add files in the same table 

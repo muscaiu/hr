@@ -1,27 +1,29 @@
-<template name="NewCvForm">
-    <div class="new-recipe-container">
-         <i class="fa fa-close"></i>
-        <!--{{> quickForm collection="Cvs"
-            id="insertCvForm"
-            type="insert"
-            class="new-recipe-form"
-        }}
-        <br>
-        <div class="jumbotron">
-            {{> uploadForm}}
-            {{> fileTable}}
-        </div>-->
+    <template name="NewCvForm">
+        <div class="new-recipe-container">
+            <i class="fa fa-close"></i>
+            {{> quickForm collection="Cvs"
+                id="insertCvForm"
+                type="insert"
+                class="new-recipe-form"}}
+            <br>
+            <div class="new-recipe-container">
+                {{> uploadForm}}
+                {{> fileTable}}
+            </div>
 
-        {{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
-            {{> afQuickField name="name"}}
-            {{> afQuickField name="email"}}
-            {{> uploadForm}}
-        {{/autoForm}}
+        </div>
+    </template>
 
-        {{> fileTable}}
-    </div>
+                <!--{{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
+                {{> afQuickField name="name"}}
+                {{> afQuickField name="email"}}
+                <!--{{> afQuickField name="images"}}
+                {{> uploadForm}}
+                {{/autoForm}}
 
-</template>
+                {{> fileTable}}-->
+
+
 
         <!--{{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
             <div class="form-group {{#if afFieldIsInvalid name='firstName'}}has-error{{/if}}">

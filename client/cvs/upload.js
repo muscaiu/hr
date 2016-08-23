@@ -24,6 +24,9 @@ Template.uploadForm.events({
             };
             uploader.onComplete = function (file) {
                 console.log(file.name + ' upload completed');
+                toastr.options.timeOut = 5000;
+                toastr.options.extendedTimeOut = 2000;
+                toastr.success('','Success!');
             };
             uploader.onCreate = function (file) {
                 console.log(file.name + ' created');
@@ -41,7 +44,7 @@ Template.uploadForm.events({
                 );
             };
             uploader.start();
-        });
+        });        
     }
 });
 

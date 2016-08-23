@@ -40,5 +40,8 @@ session
 jalik:ufs
 jalik:ufs-gridfs
 
+chrismbeckett:toastr
+buishi:autoform-ufs
+
 # meteorhacks:kadira
 # msavin:jetsetter

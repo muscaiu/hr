@@ -1,0 +1,6 @@
+cv.js 
+        - handles the edit and delete button
+        - this.editMode = new ReactiveVar(false);
+        - Template.Cv.events - 'click .toggle-menu'
+                             - 'click .fa-trash' : delete
+                             - 'click .fa-pencil': template.editMode.set(!template.editMode.get());

@@ -1,4 +1,4 @@
-import '../collections/files';
+import '../collections/FilesCollection';
 import {UploadFS} from 'meteor/jalik:ufs';
 
 FileFilter = new UploadFS.Filter({
