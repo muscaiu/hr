@@ -9,14 +9,24 @@ Template.uploadForm.events({
         ev.preventDefault();
 
         UploadFS.selectFiles(function (file) {
+
+            var cv = {
+                name: file.name,
+                size: file.size,
+                type: file.type,
+                interviuId : Session.get("formId"),
+            }
+
             const ONE_MB = 1024 * 100;
+
             let uploader = new UploadFS.Uploader({
+                store: FileStore,
                 adaptive: false,
                 chunkSize: ONE_MB * 16.66,
                 maxChunkSize: ONE_MB * 20,
                 data: file,
-                file: file,
-                store: FileStore,
+                file: cv,
+
                 maxTries: 3
             });
             uploader.onAbort = function (file) {
@@ -34,6 +44,8 @@ Template.uploadForm.events({
             };
             uploader.onError = function (err, file) {
                 console.error(file.name + ' could not be uploaded', err);
+                toastr.options.timeOut = 5000;
+                toastr.options.extendedTimeOut = 2000;
                 toastr.error('Maximum size 10MB','Error');
             };
             uploader.onProgress = function (file, progress) {
@@ -45,7 +57,8 @@ Template.uploadForm.events({
                 );
             };
             uploader.start();
-        });        
+        });    
+        console.log(Session.get("formId"));    
     }
 });
 
@@ -56,7 +69,7 @@ Template.fileTable.onCreated(function () {
 
 Template.fileTable.helpers({
     files: function () {
-        return Files.find({}, {
+        return Files.find({ "interviuId" : Session.get("formId")}, {
             sort: {createdAt: 1, name: 1}
         });
     }

@@ -1,6 +1,7 @@
 //using reactive-var package make SessionVariable for Template
 Template.Cv.onCreated(function(){
     this.editMode = new ReactiveVar(false);
+    //console.log(editMode);
 })
 
 //Toggle inMenu in Cv.html
@@ -26,7 +27,7 @@ Template.Cv.events({
             });       
     },
     'click .fa-pencil': function(event, template){
-        console.log(this._id);
+        Session.set('formId', this._id);
         template.editMode.set(!template.editMode.get());
     }
 });
