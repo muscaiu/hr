@@ -61,7 +61,8 @@ CvSchema = new SimpleSchema({
     },
     email:{
         type: String,
-        label: "Email"
+        // regEx: SimpleSchema.RegEx.Email,
+        label: "E-mail"
     },
     files: {
         type: [String],
@@ -84,9 +85,15 @@ CvSchema = new SimpleSchema({
         type: String,
         label: "Sex",
         optional: true,
-        allowedValues: [
-            "M", "F"
-        ]
+        autoform: {
+            type: "select",
+            options: function () {
+                return [
+                {label: "F", value: "F"},
+                {label: "M", value: "M"},
+                ];
+            }
+        }
     },
     experiences:{
         label: "Experienta",

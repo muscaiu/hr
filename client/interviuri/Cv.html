@@ -1,6 +1,6 @@
 <template name="Cv">
     <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
-        <h1>{{name}} - {{age}}</h1> 
+        <h3>{{name}}</h3> 
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
             {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this}}

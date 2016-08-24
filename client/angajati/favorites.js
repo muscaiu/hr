@@ -6,7 +6,7 @@ Template.Favorites.onCreated(function(){
 });
 
 Template.Favorites.helpers({
-    cvs: () => {
+    totalAngajati: () => {
         return Cvs.find({inMenu: true});
     }
 });
