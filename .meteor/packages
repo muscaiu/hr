@@ -43,5 +43,9 @@ jalik:ufs-gridfs
 chrismbeckett:toastr
 buishi:autoform-ufs
 
+twbs:bootstrap
+aldeed:autoform-bs-datetimepicker
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+
 # meteorhacks:kadira
 # msavin:jetsetter

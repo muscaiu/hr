@@ -3,14 +3,14 @@
         <h1>{{name}} - {{age}}</h1> 
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
-            {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this autosave = true}}
+            {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this}}
                 {{> afQuickField name="name"}}
-                {{> afQuickField name="email"}}
+                {{> afQuickField name="email" type="email"}}
                 {{> afQuickField name="age"}}
                 {{> afQuickField name="sex"}}
                 {{> afQuickField name="experiences"}}
                 {{> afQuickField name="languages"}}
-                {{> afQuickField name="createdAt"}}
+                {{> afQuickField name="createdAt" type="bootstrap-datetimepicker"}}
                 <!--{{> afQuickField name="files"}}-->
                 <button type="submit" class="submitClicked">Save</button>
             {{/autoForm}}

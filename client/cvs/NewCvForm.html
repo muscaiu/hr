@@ -3,13 +3,20 @@
             <i class="fa fa-close"></i>
 
             {{#autoForm id="updateCvId" type="insert" collection="Cvs"}}
+              <!--<div class="form-group {{#if afFieldIsInvalid name='name'}}has-error{{/if}}">
+                <label class="control-label">{{afFieldLabelText name='name'}}</label>
+                {{> afFieldInput name='name'}}
+                {{#if afFieldIsInvalid name='name'}}
+                    <span class="help-block">{{{afFieldMessage name='name'}}}</span>
+                {{/if}}
+              </div>-->
                 {{> afQuickField name="name"}}
-                {{> afQuickField name="email"}}
+                {{> afQuickField name="email" type="email"}}
                 {{> afQuickField name="age"}}
                 {{> afQuickField name="sex"}}
                 {{> afQuickField name="experiences"}}
                 {{> afQuickField name="languages"}}
-                {{> afQuickField name="createdAt"}}
+                {{> afQuickField name="createdAt" type="bootstrap-datetimepicker"}}
                 <!--{{> afQuickField name="files"}}-->
                 <button type="submit" class="submitClicked">Save</button>
             {{/autoForm}}

@@ -61,8 +61,7 @@ CvSchema = new SimpleSchema({
     },
     email:{
         type: String,
-        label: "Email",
-        optional: true,
+        label: "Email"
     },
     files: {
         type: [String],
@@ -121,9 +120,14 @@ CvSchema = new SimpleSchema({
     createdAt: {
         type: Date,
         label: "Data Interviu",
-        autoValue: function(){
-            return new Date()
-        }
+        // autoValue: function(){
+        //     return new Date()
+        // },
+        // autoform: {
+        //     afFieldInput: {
+        //         type: "bootstrap-datetimepicker"
+        //     }
+        // }
     }
 });
 

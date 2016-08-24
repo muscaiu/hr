@@ -3,6 +3,7 @@ accounts-password@1.1.13
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
 aldeed:autoform@5.8.1
+aldeed:autoform-bs-datetimepicker@1.0.6
 aldeed:collection2@2.9.1
 aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
@@ -118,6 +119,8 @@ stolinski:stylus-multi@1.4.3
 templating@1.1.14
 templating-tools@1.0.4
 tracker@1.0.15
+tsega:bootstrap3-datetimepicker@3.1.3_3
+twbs:bootstrap@3.3.6
 ui@1.0.11
 underscore@1.0.9
 url@1.0.10
