@@ -26,7 +26,7 @@ Template.uploadForm.events({
                 console.log(file.name + ' upload completed');
                 toastr.options.timeOut = 5000;
                 toastr.options.extendedTimeOut = 2000;
-                toastr.success('','Success!');
+                toastr.success('File Uploaded','Success');
             };
             uploader.onCreate = function (file) {
                 console.log(file.name + ' created');
@@ -34,6 +34,7 @@ Template.uploadForm.events({
             };
             uploader.onError = function (err, file) {
                 console.error(file.name + ' could not be uploaded', err);
+                toastr.error('Maximum size 10MB','Error');
             };
             uploader.onProgress = function (file, progress) {
                 console.log(file.name + ' :'

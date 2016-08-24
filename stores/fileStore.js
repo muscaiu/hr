@@ -3,8 +3,8 @@ import {UploadFS} from 'meteor/jalik:ufs';
 
 FileFilter = new UploadFS.Filter({
     minSize: 1,
-    // maxSize: 1024 * 1000 * 10, // 10MB,
-    contentTypes: ['image/*', 'audio/*', 'video/*', 'application/*']
+    maxSize: 1024 * 1000 * 10, // 10MB,
+    contentTypes: ['image/*', 'application/*']// 'audio/*', 'video/*',
 });
 
 /**
@@ -29,8 +29,8 @@ FileFilter = new UploadFS.Filter({
  */
 FileStore = new UploadFS.store.GridFS({
     collection: Files,
-    name: 'photos',
-    chunkSize: 1024 * 255,
+    name: 'files',
+    //chunkSize: 1024 * 255,
     filter: FileFilter,
     // permissions: defaultPermissions,
     // onRead: FileReadHandler,

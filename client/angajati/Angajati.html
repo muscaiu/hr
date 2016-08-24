@@ -1,14 +1,14 @@
-<template name="Favorites">
+<template name="Angajati">
     <h1 class="page-title">Angajati</h1>
     
     {{#each cvs}}
-        {{> FavoriteItem}}
+        {{> AngajatiItem}}
     {{else}}
-        <h3>Niciun angajat. Adauga  <a href="/angajati">angajati</a>.</h3>
+        <h3>Niciun angajat. Adauga  <a href="/interviuri">angajati</a>.</h3>
     {{/each}}
 </template>
 
-<template name="FavoriteItem">
+<template name="AngajatiItem">
     <div class="menu-item">
         <h3> {{ name }} </h3>
         <p> {{ email }} </p>

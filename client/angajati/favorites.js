@@ -1,12 +1,12 @@
-Template.Favorites.onCreated(function(){
+Template.Angajati.onCreated(function(){
     var self = this;
     self.autorun(function(){
         self.subscribe('cvs')
     })
 });
 
-Template.Favorites.helpers({
-    totalAngajati: () => {
+Template.Angajati.helpers({
+    cvs: () => {
         return Cvs.find({inMenu: true});
     }
 });
