@@ -15,5 +15,8 @@ Template.Cvs.helpers({
 
 Template.Cvs.events({
     'click .new-recipe': () =>
-        Session.set('newCvForm', true)
+        Session.set({
+            'newCvForm': true,
+            'formId': null
+        })
 });
