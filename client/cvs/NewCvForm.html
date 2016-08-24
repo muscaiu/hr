@@ -1,7 +1,28 @@
     <template name="NewCvForm">
         <div class="new-recipe-container">
             <i class="fa fa-close"></i>
-            {{> quickForm collection="Cvs"
+
+            {{#autoForm id="updateCvId" type="insert" collection="Cvs"}}
+                {{> afQuickField name="name"}}
+                {{> afQuickField name="email"}}
+                {{> afQuickField name="age"}}
+                {{> afQuickField name="sex"}}
+                {{> afQuickField name="experiences"}}
+                {{> afQuickField name="languages"}}
+                {{> afQuickField name="createdAt"}}
+                <!--{{> afQuickField name="files"}}-->
+                <button type="submit" class="submitClicked">Save</button>
+            {{/autoForm}}
+            
+            <br>
+
+            {{> fileTable}}
+            {{> uploadForm}}
+
+        </div>
+    </template>
+
+        <!--{{> quickForm collection="Cvs"
                 id="insertCvForm"
                 type="insert"
                 class="new-recipe-form"}}
@@ -11,8 +32,16 @@
                 {{> fileTable}}
             </div>
 
-        </div>
-    </template>
+
+            {{#autoForm collection="Cvs" id="insertCvForm" schema=schema}}
+            {{#each afFieldNames}}
+                {{> afQuickField name=this options="auto"}}
+            {{/each}}
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            {{/autoForm}}-->
+
 
                 <!--{{#autoForm id="insertCvForm" type="insert" collection="Cvs"}}
                 {{> afQuickField name="name"}}

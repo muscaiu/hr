@@ -64,6 +64,17 @@ CvSchema = new SimpleSchema({
         label: "Email",
         optional: true,
     },
+    files: {
+        type: [String],
+        optional: true,
+        autoform: {
+            type: 'ufs',
+            collection: 'files',
+            store: 'FileStore',
+            publication: 'files',
+            //thumbnails: 'thumbnails'
+        }
+    },
     age: {
         type: Number,
         min: 18,
@@ -84,7 +95,7 @@ CvSchema = new SimpleSchema({
         optional: true,
     },
     languages:{
-        label: "Adauga Limba",
+        label: "Limbi Vorbite",
         type: [Languages],
         optional: true,
     }

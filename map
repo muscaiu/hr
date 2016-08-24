@@ -1,6 +1,48 @@
-cv.js 
-        - handles the edit and delete button
-        - this.editMode = new ReactiveVar(false);
-        - Template.Cv.events - 'click .toggle-menu'
-                             - 'click .fa-trash' : delete
-                             - 'click .fa-pencil': template.editMode.set(!template.editMode.get());
+cv.js - handles the edit and delete button
+   - this.editMode = new ReactiveVar(false);
+   - Template.Cv.events :
+        - 'click .toggle-menu'
+        - 'click .fa-trash' : delete
+        - 'click .fa-pencil': template.editMode.set(!template.editMode.get());
+   - Template.Cv.helpers :
+        - updateCvId : return this._id
+        - editMode : return Template.instance().editMode.get()
+
+cvs.js - subscribes to 'cvs'
+   - Meteor.subscribe('cvs')
+   - Template.Cvs.Oncreated: - subscribe ('cvs')
+   - Template.Cvs.events:
+        - 'click .new-recipe': Session.set ('newForm', true)
+
+favorites.js - subscribes to cvs and loads only those inMenu
+   - Template.Favorites.Oncreated:
+        - subscribe('cvs')
+   - Template.Favorites.helpers :
+        - return Cvs.find({inMenu: true})
+
+newCvForm.js - closing newForm makes newCvForm SessionVariable false
+   - Template.NewCvForm.events : 
+        -'click .fa-close' : Session.set('newCvForm', false);
+
+upload.js - handles upload events
+   - Template.uploadForm.events:
+        - 'click [name=uploads]: ev.preventDefault()
+        - UploadFs.selectFiles 
+                - uploader = UploadFS.Uploader
+                - uploader.onAbort
+                - uploader.onComplete
+                - uploader.onCreate
+                - uploader.onError
+                - uploader.onProgress
+                - uploader.start
+   - Template.fileTable.onCreated:
+        - subscribe('files')
+   - Template.fileTable.helpers:
+        - return Files.find(sort(createdAt))
+
+publish.js - looks in the database for cvs, files
+   - Meteor.publish('cvs', function return Cvs.find, sort)
+   - Meteor.publish('singleCv') - for details page
+   - Meteor.publish('files)
+
+fileStore.js - handles Filtering files

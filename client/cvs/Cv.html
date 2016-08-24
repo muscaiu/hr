@@ -3,7 +3,23 @@
         <h1>{{name}} - {{age}}</h1> 
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
-            {{> quickForm collection="Cvs"
+            {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this autosave = true}}
+                {{> afQuickField name="name"}}
+                {{> afQuickField name="email"}}
+                {{> afQuickField name="age"}}
+                {{> afQuickField name="sex"}}
+                {{> afQuickField name="experiences"}}
+                {{> afQuickField name="languages"}}
+                {{> afQuickField name="createdAt"}}
+                <!--{{> afQuickField name="files"}}-->
+                <button type="submit" class="submitClicked">Save</button>
+            {{/autoForm}}
+            
+            <br>
+
+            {{> fileTable}}
+            {{> uploadForm}}
+            <!--{{> quickForm collection="Cvs"
                 id=updateCvId
                 type="update"
                 doc = this
@@ -12,7 +28,7 @@
             <div class="container">
                 {{> uploadForm}}
                 {{> fileTable}}
-            </div>
+            </div>-->
         {{else}}
             <!--<p>{{email}}</p>
             <p>
