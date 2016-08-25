@@ -12,15 +12,33 @@
                 {{> afQuickField name="languages"}}
                 {{> afQuickField name="createdAt" type="bootstrap-datetimepicker"}}
                 <!--{{> afQuickField name="files"}}-->
-                <button type="submit" class="submitClicked">Save</button>
-            {{/autoForm}}
-            
-            <br>
-
             <div class="recipe">
+                <h4>CV-uri Salvate</h4>
                 {{> fileTable}}
                 {{> uploadForm}}               
             </div>
+                <button type="submit" class="submitClicked">Save</button>
+            {{/autoForm}}            
+            <br>
+
+
+
+        {{else}}
+            {{#if inMenu}}
+                <!--<button class="btn-deny toggle-menu">Scoate de la Angajati</button>-->
+                <i class="fa fa-minus toggle-menu"></i>
+            {{else}}
+                <i class="fa fa-plus toggle-menu"></i>
+                <!--<button class="btn-primary toggle-menu">Adauga la Angajati</button>-->
+            {{/if}}
+        {{/if}}
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash"></i>
+    </article>
+</template>
+
+
+
             <!--{{> quickForm collection="Cvs"
                 id=updateCvId
                 type="update"
@@ -31,21 +49,11 @@
                 {{> uploadForm}}
                 {{> fileTable}}
             </div>-->
-        {{else}}
-            <!--<p>{{email}}</p>
+
+                        <!--<p>{{email}}</p>
             <p>
                 {{#each experiences}} 
                     <span class="ingredient">{{name}} - {{ammount}}</span>
                 {{/each}}
             </p>-->
             <!--<a href="/cv/{{_id}}">View Details</a>-->
-        {{#if inMenu}}
-             <button class="btn-deny toggle-menu">Scoate de la Angajati</button>
-        {{else}}
-              <button class="btn-primary toggle-menu">Adauga la Angajati</button>
-        {{/if}}
-        {{/if}}
-        <i class="fa fa-pencil"></i>
-        <i class="fa fa-trash"></i>
-    </article>
-</template>

@@ -9,7 +9,7 @@ Template.Cvs.onCreated(function(){
 
 Template.Cvs.helpers({
     cvs: () =>{
-        return Cvs.find({});
+        return Cvs.find({}, {sort: {createdAt: -1}});
     }
 });
 
@@ -18,5 +18,9 @@ Template.Cvs.events({
         Session.set({
             'newCvForm': true,
             'formId': null
-        })
+        }),
+    'click .sorteaza': function(){
+        return Cvs.find({}, {sort: {createdAt: 1}})
+    }
+
 });

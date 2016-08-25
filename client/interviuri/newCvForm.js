@@ -4,6 +4,18 @@ Template.NewCvForm.events({
     }
 })
 
+AutoForm.hooks({
+    updateCvId: {
+        onError: function(formType, error) {
+        AutoForm.selectFirstInvalidField('updateCvId', this.ss);
+        toastr.error('Verifica toate campurile obligatorii','Eroare');
+        },
+        onSuccess : function(){
+            toastr.success('Camp creat','Succes');
+            Session.set('newCvForm', false);
+        }
+    }
+});
 // AutoForm.addHooks('insertCvForm'),{
 //     onSuccess: function (){
 //         setTimeout(function (){

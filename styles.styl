@@ -127,6 +127,14 @@ p
     
 .new-recipe
     margin-bottom 20px 
+    &:hover
+          background-color teal
+          color purp
+.sorteaza
+    margin-bottom 20px 
+    &:hover
+          background-color orange
+          color purp
 
 .new-recipe-container
     position relative
@@ -144,7 +152,8 @@ p
         margin-bottom 10px 
     textarea, input
         width 100% 
-
+.control-label
+    color black
 .btn, button
     display inline-block
     cursor pointer
@@ -233,7 +242,7 @@ input, select, textarea
     
 .panel-body
     .form-group
-        lost-column 1/2 
+        lost-column 1/1 
         
 .autoform-remove-item.btn
     background light-grey
@@ -281,7 +290,7 @@ input, select, textarea
         text-align center
         trans()
         &:hover, &.active
-            background purp 
+            background purp                                     /*MENU BACKGROUND */
     i
         display block
         font-size 2em
@@ -327,9 +336,19 @@ input, select, textarea
         border-bottom: rgba(0,0,0, 0.3) solid 3px
         margin-top 0
         margin-bottom 10px 
+    h4
+        font-size: 3em;
+        opacity: 0.3;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px
+        margin-top 0
+        margin-bottom 10px 
+        color black
+
     button
         margin-top 20px 
-    .fa-trash, .fa-pencil
+        &:hover
+            color white
+    .fa-trash, .fa-pencil, .fa-plus, .fa-minus
         opacity 0.3
         cursor pointer
         position absolute
@@ -347,6 +366,14 @@ input, select, textarea
         right 40px
         &:hover
             color teal
+    .fa-plus
+        right 80px
+        &:hover
+            color lime
+    .fa-minus
+        right 80px
+        &:hover
+            color orange
     .ingredient
         display inline-block
         margin-right 10px 
@@ -354,6 +381,10 @@ input, select, textarea
     &:hover 
         shadow-level(3)
         // animation card 0.6s ease 1 forwards
+    th, td
+        color black
+    td  
+        padding 0px
 
 @keyframes card
     0%

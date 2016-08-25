@@ -11,7 +11,6 @@ Template.Cv.events({
     },
     'click .fa-trash': function(){
         var self = this;
-        console.log(this._id);
         new Confirmation({
             message: "Esti sigur?",
             //title: "Confirma",
@@ -24,11 +23,18 @@ Template.Cv.events({
                 if(!ok) return
                     //else delete CV
                     Meteor.call('deleteCv', self._id);
+                    toastr.success('Camp Sters');
             });       
     },
     'click .fa-pencil': function(event, template){
         Session.set('formId', this._id);
         template.editMode.set(!template.editMode.get());
+    },
+    'click .fa-plus': function(){
+        toastr.success('Adaugat la Angajati');
+    },
+    'click .fa-minus': function(){
+        toastr.success('Sters de la Angajati');
     }
 });
 
