@@ -11,7 +11,7 @@ AutoForm.hooks({
         toastr.error('Verifica toate campurile obligatorii','Eroare');
         },
         onSuccess : function(){
-            toastr.success('Camp creat','Succes');
+            toastr.success('','Salvat cu Succes');
             Session.set('newCvForm', false);
         }
     }

@@ -35,6 +35,9 @@ Template.Cv.events({
     },
     'click .fa-minus': function(){
         toastr.success('Sters de la Angajati');
+    },
+    'click .submitClicked': function(event, template){
+        template.editMode.set(!template.editMode.get());
     }
 });
 
@@ -48,3 +51,7 @@ Template.Cv.helpers({
     }
 });
 
+//helper for cratedAt Format
+Template.registerHelper('formatDate', function(date, format){
+    return moment(new Date(date)).format(format);
+});

@@ -1,6 +1,6 @@
 <template name="Cv">
     <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
-        <h3>{{name}}</h3> 
+        <h3>{{name}} - {{formatDate createdAt 'DD MMMM YYYY'}}</h3> 
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
             {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this}}
@@ -20,9 +20,6 @@
                 <button type="submit" class="submitClicked">Save</button>
             {{/autoForm}}            
             <br>
-
-
-
         {{else}}
             {{#if inMenu}}
                 <!--<button class="btn-deny toggle-menu">Scoate de la Angajati</button>-->
