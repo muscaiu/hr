@@ -1,6 +1,15 @@
 <template name="Header">
     <header>
         <h1>HR Bitech</h1>
-        {{> loginButtons}}
+        <!--{{> loginButtons}}-->
+        {{> LoginModal}}
+        <br>
+        
+        {{#if currentUser}}
+            <li class="logout">Logout</li>
+        {{else}}
+            <li class="login-toggle">Login/Sign-up</li>
+        {{/if}}
     </header>
+
 </template>

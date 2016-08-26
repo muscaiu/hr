@@ -25,11 +25,8 @@ stolinski:stylus-multi
 fortawesome:fontawesome
 spiderable
 fastclick
-raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-ui
-accounts-password
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
@@ -51,3 +48,11 @@ momentjs:moment
 
 # meteorhacks:kadira
 # msavin:jetsetter
+
+
+#accounts-ui
+accounts-password
+accounts-base
+useraccounts:unstyled
+raix:handlebar-helpers
+fourseven:scss

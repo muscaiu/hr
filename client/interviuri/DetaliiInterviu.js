@@ -1,7 +1,7 @@
 
-Template.DetaliiInterviu.onCreated(function(){
+Template.DetaliiInterviu.onCreated(function () {
     var self = this;
-    self.autorun(function(){
+    self.autorun(function () {
         // self.subscribe('cvs')
         var id = FlowRouter.getParam('id');
         self.subscribe('singleCv', id);
@@ -9,16 +9,20 @@ Template.DetaliiInterviu.onCreated(function(){
 });
 
 Template.DetaliiInterviu.helpers({
-    cv: () =>{
+    cv: () => {
         var id = FlowRouter.getParam('id');
-        return Cvs.findOne({_id: id});
+        return Cvs.findOne({ _id: id });
     },
-    getAuthorName: function(){
-        return Meteor.users.find({_id: 'wuAdZkugjY8BsvzoS'});
-    },
+    // getAuthorName: function(){
+    //     return Meteor.users.find({_id: 'wuAdZkugjY8BsvzoS'});
+    // },
+    getAuthorName: function () {
+        console.log(this.userId);
+        return Meteor.users.find({ _id: this.userId });
+    }
 });
 
 //helper for cratedAt Format
-Template.registerHelper('formatDate', function(date, format){
-    return moment(new Date(date)).format(format);    
+Template.registerHelper('formatDate', function (date, format) {
+    return moment(new Date(date)).format(format);
 });

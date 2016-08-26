@@ -1,39 +1,64 @@
-
-
-{ 
-    "_id" : "Sfh6v8h3XWD5v66W5",
-    "store" : "files", 
-    "name" : "kpawadp.pdf", 
-    "lastModified" : 1431512602000, 
-    "lastModifiedDate" : ISODate("2015-05-13T10:23:22Z"), 
-    "webkitRelativePath" : "", 
-    "size" : 2219023, 
-    "type" : "application/pdf", 
-    "complete" : true, 
-    "uploading" : false, 
-    "extension" : "pdf", 
-    "progress" : 1, 
-    "userId" : "yT4at8Tpuu39WjakL", 
-    "token" : "99E86B39Eb", 
-    "uploadedAt" : ISODate("2016-08-24T11:37:39.924Z"), 
-    "url" : "http://localhost:3000/ufs/files/Sfh6v8h3XWD5v66W5/kpawadp.pdf" 
+{
+    "_id": "Sfh6v8h3XWD5v66W5",
+    "store": "files",
+    "name": "kpawadp.pdf",
+    "lastModified": 1431512602000,
+    "lastModifiedDate": ISODate("2015-05-13T10:23:22Z"),
+    "webkitRelativePath": "",
+    "size": 2219023,
+    "type": "application/pdf",
+    "complete": true,
+    "uploading": false,
+    "extension": "pdf",
+    "progress": 1,
+    "userId": "yT4at8Tpuu39WjakL",
+    "token": "99E86B39Eb",
+    "uploadedAt": ISODate("2016-08-24T11:37:39.924Z"),
+    "url": "http://localhost:3000/ufs/files/Sfh6v8h3XWD5v66W5/kpawadp.pdf"
 }
-
-
-{ 
-    "_id" : "TNQHaTRk9DrCo4ARt", 
-    "store" : "photos", 
-    "name" : "bloc2-kristal-ap.-37.jpg", 
-    "lastModified" : 1438611678000, 
-    "lastModifiedDate" : ISODate("2015-08-03T14:21:18Z"), 
-    "webkitRelativePath" : "", 
-    "size" : 137791, "type" : "image/jpeg", 
-    "complete" : true, 
-    "uploading" : false, 
-    "extension" : "jpg", 
-    "progress" : 1, 
-    "userId" : "yT4at8Tpuu39WjakL", 
-    "token" : "AbEB5Bab28", 
-    "uploadedAt" : ISODate("2016-08-23T08:20:31.343Z"), 
-    "url" : "http://localhost:3000/ufs/photos/TNQHaTRk9DrCo4ARt/bloc2-kristal-ap.-37.jpg" 
+{
+    "_id": "yT4at8Tpuu39WjakL",
+    "createdAt": ISODate("2016-08-22T09:03:28.857Z"),
+    "services": {
+        "password": {
+            "bcrypt": "$2a$10$aXhKBdPQdDUB6Dfc4X5NPeL/rSlYQLFyHZL/8K08isX2J1BpNixDC"
+        },
+        "resume": {
+            "loginTokens": [
+                {
+                    "when": ISODate("2016-08-24T11:37:29.503Z"),
+                    "hashedToken": "pahHTQpyvJ/zPf3lyAnKL7dqVnmdNVCmVUBDQ4qADfE="
+                }
+            ]
+        }
+    },
+    "emails": [
+        {
+            "address": "admin@admin.admin",
+            "verified": false
+        }
+    ]
+}
+{
+    "_id": "7SqDjmX8kYbJzdQaH",
+    "createdAt": ISODate("2016-08-26T10:34:35.714Z"),
+    "services": {
+        "password": {
+            "bcrypt": "$2a$10$YqiZafHpuIJ2XgAxxgDBt.7d0oHEo4txirVgjNLiQX0XwSi8BolNO"
+        },
+        "resume": {
+            "loginTokens": [
+                {
+                    "when": ISODate("2016-08-26T10:34:35.799Z"),
+                    "hashedToken": "o/Q8r5ZUPuHXU81q1KSwH6nc9iwH1J+loxoFZOtPtQg="
+                }
+            ]
+        }
+    },
+    "emails": [
+        {
+            "address": "cris@cris.cris",
+            "verified": false
+        }
+    ]
 }
