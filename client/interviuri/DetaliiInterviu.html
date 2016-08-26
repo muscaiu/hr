@@ -1,0 +1,46 @@
+<template name="DetaliiInterviu">
+    <article class="recipe">
+        <h2>Nume: {{ cv.name }}</h2>
+        <p>E-Mail: <a>{{ cv.email }}</a></p>
+        <p>Varsta: {{ cv.age }}</p>
+        <p>Sex: {{ cv.sex }}</p>
+        <p>Limbi vorbite: 
+            <ul>                
+                {{#each cv.languages}} 
+                    <li>
+                        {{ language }}
+                        {{ level }}
+                    </li>
+                {{/each}}
+            </ul>
+        </p>
+        <p>Experienta: 
+            <ul>                
+                {{#each cv.experiences}} 
+                    <li>
+                        {{ name }}
+                        {{ job }}
+                        {{ ammount }}
+                    </li>
+                {{/each}}
+            </ul>
+        </p>
+        <p>{{#if inMenu }}
+                Angajat: Da
+            {{else}}
+                Angajat: Nu
+            {{/if}}
+        </p>
+        <p>
+            Creat pe: {{ formatDate cv.createdAt 'DD MMMM YYYY HH:mm' }}
+        </p>
+        <p>Creat de: {{ cv.author }}</p>
+        <p>Creat de: {{#each getAuthorName }}
+                        {{#each emails}}
+                            {{address}}
+                        {{/each }}
+                    {{/each}}
+        </p>
+
+    </article>
+</template>

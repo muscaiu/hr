@@ -1,6 +1,7 @@
 <template name="Cv">
     <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
         <h3>{{name}} - {{formatDate createdAt 'DD MMMM YYYY'}}</h3> 
+        <a href="/interviu/{{_id}}">View Details</a>
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
             {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this}}

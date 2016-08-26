@@ -30,3 +30,7 @@ Meteor.publish('files', function (fields, options) {
         //Thumbnails.find(fields, options)
     ];
 });
+
+// Meteor.publish('usersData', function () {
+//     return Users.find();
+// });
