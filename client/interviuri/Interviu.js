@@ -1,11 +1,11 @@
 //using reactive-var package make SessionVariable for Template
-Template.Cv.onCreated(function(){
+Template.Interviu.onCreated(function(){
     this.editMode = new ReactiveVar(false);
     //console.log(editMode);
 })
 
-//Toggle inMenu in Cv.html
-Template.Cv.events({
+//Toggle inMenu in Interviu.html
+Template.Interviu.events({
     'click .toggle-menu': function(){
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     },
@@ -42,7 +42,7 @@ Template.Cv.events({
 });
 
 //helper for quickform in CV.html
-Template.Cv.helpers({
+Template.Interviu.helpers({
     updateCvId: function(){
         return this._id;
     },

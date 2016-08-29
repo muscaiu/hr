@@ -1,6 +1,6 @@
 Meteor.subscribe('cvs');
 
-Template.Cvs.onCreated(function(){
+Template.Interviuri.onCreated(function(){
     var self = this;
     self.autorun(function(){//unsubsribe from old subscriptions
         self.subscribe('cvs');
@@ -8,7 +8,7 @@ Template.Cvs.onCreated(function(){
     });
 });
 
-Template.Cvs.helpers({
+Template.Interviuri.helpers({
     cvs(){
         const instance = Template.instance();
         return Cvs.find({}, {sort: {createdAt: instance.sortOrder.get() } });
@@ -18,7 +18,7 @@ Template.Cvs.helpers({
     // }
 });
 
-Template.Cvs.events({
+Template.Interviuri.events({
     'click .new-recipe': () =>
         Session.set({
             'newCvForm': true,
