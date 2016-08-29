@@ -4,5 +4,8 @@ Template.Header.events({
     },
     'click .logout': () =>{
         AccountsTemplates.logout();
-    }
+    },
+    // 'click .submit': () =>{
+    //     Session.set('nav-toggle', '');
+    // }
 })
