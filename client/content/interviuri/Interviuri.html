@@ -5,7 +5,9 @@
     {{#if $.Session.get 'newCvForm'}}
         {{> NewCvForm}}
     {{else}}
-        <button class="new-recipe">Adauga</button>
+        {{#if hrUser}}
+            <button class="new-recipe">Adauga</button>
+        {{/if}}
         <button class="sorteaza">Sorteaza</button>
     {{/if}}
     <section class="cvs">

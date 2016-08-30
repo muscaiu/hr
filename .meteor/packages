@@ -53,6 +53,7 @@ momentjs:moment
 #accounts-ui
 accounts-password
 accounts-base
+alanning:roles
 useraccounts:unstyled
 raix:handlebar-helpers
 fourseven:scss

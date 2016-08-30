@@ -22,16 +22,21 @@
             {{/autoForm}}            
             <br>
         {{else}}
-            {{#if inMenu}}
-                <!--<button class="btn-deny toggle-menu">Scoate de la Angajati</button>-->
-                <i class="fa fa-minus toggle-menu"></i>
-            {{else}}
-                <i class="fa fa-plus toggle-menu"></i>
-                <!--<button class="btn-primary toggle-menu">Adauga la Angajati</button>-->
+            {{#if hrUser}}
+                {{#if inMenu}}
+                    <!--<button class="btn-deny toggle-menu">Scoate de la Angajati</button>-->
+                    <i class="fa fa-minus toggle-menu"></i>
+                {{else}}
+                    <i class="fa fa-plus toggle-menu"></i>
+                    <!--<button class="btn-primary toggle-menu">Adauga la Angajati</button>-->
+                {{/if}}
             {{/if}}
         {{/if}}
-        <i class="fa fa-pencil"></i>
-        <i class="fa fa-trash"></i>
+            {{#if hrUser}}
+                <i class="fa fa-pencil"></i>
+                <i class="fa fa-trash"></i>
+            {{/if}}
+            
     </article>
 </template>
 

@@ -20,17 +20,17 @@ AccountsTemplates.addFields([
         errStr: 'At least 1 lowercase and 1 uppercase letter required',
     },
     {
-        _id: 'profession',
+        _id: 'grup',
         type: 'select',
-        displayName: 'Profession',
+        displayName: 'Grup',
         select:[
             {
-                text: 'Developer',
-                value: 'developer'
+                text: 'HR',
+                value: 'hr'
             },
             {
-                text: 'Designer',
-                value: 'designer'
+                text: 'Normal',
+                value: 'normal'
             },
             {
                 text: 'Other',

@@ -48,7 +48,11 @@ Template.Interviu.helpers({
     },
     editMode: function(){
         return Template.instance().editMode.get();
+    }, 
+    hrUser: function(){
+        return Roles.userIsInRole(Meteor.userId(), 'hr');
     }
+
 });
 
 //helper for cratedAt Format
