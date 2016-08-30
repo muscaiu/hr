@@ -22,7 +22,7 @@
             {{/autoForm}}            
             <br>
         {{else}}
-            {{#if hrUser}}
+            {{#if isInRole 'hr, admin'}}
                 {{#if inMenu}}
                     <!--<button class="btn-deny toggle-menu">Scoate de la Angajati</button>-->
                     <i class="fa fa-minus toggle-menu"></i>
@@ -32,7 +32,7 @@
                 {{/if}}
             {{/if}}
         {{/if}}
-            {{#if hrUser}}
+            {{#if isInRole 'hr, admin'}}
                 <i class="fa fa-pencil"></i>
                 <i class="fa fa-trash"></i>
             {{/if}}

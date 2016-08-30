@@ -16,9 +16,9 @@ Template.Interviuri.helpers({
     // cvs: () =>{
     //     return Cvs.find({}, {sort: {createdAt: -1}});
     // }
-    hrUser: function(){
-        return Roles.userIsInRole(Meteor.userId(), 'hr');
-    }
+    // hrUser: function(){
+    //     return Roles.userIsInRole(Meteor.userId(), 'hr');
+    // }
 });
 
 Template.Interviuri.events({

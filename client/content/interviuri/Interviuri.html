@@ -5,7 +5,7 @@
     {{#if $.Session.get 'newCvForm'}}
         {{> NewCvForm}}
     {{else}}
-        {{#if hrUser}}
+        {{#if isInRole 'hr, admin'}}
             <button class="new-recipe">Adauga</button>
         {{/if}}
         <button class="sorteaza">Sorteaza</button>
