@@ -15,8 +15,7 @@
     "token": "99E86B39Eb",
     "uploadedAt": ISODate("2016-08-24T11:37:39.924Z"),
     "url": "http://localhost:3000/ufs/files/Sfh6v8h3XWD5v66W5/kpawadp.pdf"
-}
-{
+}{
     "_id": "yT4at8Tpuu39WjakL",
     "createdAt": ISODate("2016-08-22T09:03:28.857Z"),
     "services": {
@@ -38,8 +37,7 @@
             "verified": false
         }
     ]
-}
-{
+}{
     "_id": "7SqDjmX8kYbJzdQaH",
     "createdAt": ISODate("2016-08-26T10:34:35.714Z"),
     "services": {
@@ -60,5 +58,35 @@
             "address": "cris@cris.cris",
             "verified": false
         }
+    ]
+}{
+    "_id": "vTHei2t7D7gDN3KiA",
+    "createdAt": ISODate("2016-08-30T07:50:15.019Z"),
+    "services": {
+        "password": {
+            "bcrypt": "$2a$10$PpzS.XHce7sx57SgyG4TF.Q7AS83wB.zN7QTZMLVcY9EcKjbxkYxC"
+        },
+        "resume": {
+            "loginTokens": [
+                {
+                    "when": ISODate("2016-08-30T08:38:50.932Z"),
+                    "hashedToken": "DRVu5k96eRSpvv4tQhtnAb8op1q+V8qTeEbfYk6LfoE="
+                }
+            ]
+        }
+    },
+    "emails": [
+        {
+            "address": "admin@s.s",
+            "verified": false
+        }
+    ],
+    "profile": {
+        "firstName": "Administrator",
+        "grup": "admin"
+    },
+    "roles": [
+        "normal-user",
+        "admin"
     ]
 }

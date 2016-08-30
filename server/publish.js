@@ -1,9 +1,4 @@
-//publish all cvs
 Meteor.publish('cvs', function () {
-    // return Cvs.find(
-    //                 { author: this.userId }, 
-    //                 {sort: {createdAt: -1}}
-    //                 );
     return Cvs.find({}, {sort: {createdAt: -1}});
 });
 
@@ -12,7 +7,6 @@ Meteor.publish('singleCv', function(id){
     check(id, String);
     return Cvs.find({_id: id});
 });
-
 
 // Publish files and thumbnails
 Meteor.publish('files', function (fields, options) {
@@ -31,6 +25,7 @@ Meteor.publish('files', function (fields, options) {
     ];
 });
 
-// Meteor.publish('usersData', function () {
-//     return Users.find();
-// });
+Meteor.publish('allUsers', function(){
+    if(Roles.userIsInRole(this.userId, 'admin'))
+        return Meteor.users.find({});
+})
