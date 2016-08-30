@@ -14,10 +14,20 @@ Template.Users.helpers({
         return this.emails[0].address;
     },
     isAdmin: function(){
-        return Roles.userIsInRole(this._id, 'admin') ? 'admin' : 'normal'
+        return Roles.userIsInRole(this._id, 'admin') ? 'admin' : ''
     },
     dateFormat: function(){
         return moment(this.createdAt).format('D MMMM YYYY hh:mm')
+    }
+})
+
+Template.Users.events({
+    'click .user_id': function(){
+        console.log(this)
+        Session.set('currentUSer', this)
+    },
+    'click .toggle-admin': function(){
+        Meteor.call('toggleAdmin', this._id)
     }
 })
 
