@@ -18,16 +18,26 @@ Template.Users.helpers({
     },
     dateFormat: function(){
         return moment(this.createdAt).format('D MMMM YYYY hh:mm')
+    },
+    editMode: function(){
+        return Session.get('currentUser') ? 'edit-mode' : ''
+    },
+    currentEdit: function(){
+        let user = Session.get('currentUser')
+        return user._id === this._id
     }
 })
 
 Template.Users.events({
     'click .user_id': function(){
         console.log(this)
-        Session.set('currentUSer', this)
+        Session.set('currentUser', this)
     },
     'click .toggle-admin': function(){
         Meteor.call('toggleAdmin', this._id)
+    },
+    'click .close-edit-mode': function(){
+        Session.set('currentUser', null)
     }
 })
 
