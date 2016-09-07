@@ -4,10 +4,10 @@
         <!--{{> loginButtons}}-->
             {{> LoginModal}}        
         {{#if currentUser}}
-        <div class="pull-right">
-            <!--{{currentUser.emails.address}}-->
-            <div class="logout">Logout</div>
-        </div>
+            <div class="pull-right">
+                {{getUser}}
+                <div class="logout">Logout</div>
+            </div>
         {{else}}
         <div class="pull-right">
             <div class="login-toggle">Login</div>

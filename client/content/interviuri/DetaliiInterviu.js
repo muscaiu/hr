@@ -16,10 +16,10 @@ Template.DetaliiInterviu.helpers({
     // getAuthorName: function(){
     //     return Meteor.users.find({_id: 'wuAdZkugjY8BsvzoS'});
     // },
-    getAuthorName: function () {
-        console.log(this.userId);
-        return Meteor.users.find({ _id: this.userId });
-    },
+    // getAuthorName: function () {
+    //     console.log(this.userId);
+    //     return Meteor.users.find({ _id: this.userId });
+    // },
 });
 
 //helper for cratedAt Format
