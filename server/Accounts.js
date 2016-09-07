@@ -6,5 +6,6 @@ var postSignUp = function(userId, info){
 
 AccountsTemplates.configure({
     //after user registration
-    postSignUpHook: postSignUp
+    postSignUpHook: postSignUp,
+    forbidClientAccountCreation : true
 })

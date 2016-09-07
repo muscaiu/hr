@@ -435,8 +435,12 @@ table
     padding: 10px 5px
   th
     text-transform: uppercase
-    background: red
+    background: purp
     color: white
+    cursor: pointer
+    &:hover
+        background-color purp
+        color white
   &.edit-mode
     transform: translate3d(300px, 0, 0)
 .user_id
@@ -465,3 +469,7 @@ table
 /*.edit-mode . user-edit
     opacity: 1
 */
+
+.at-signup-link
+    /*visibility hidden*/
+    display none
