@@ -24,7 +24,12 @@ Template.Users.helpers({
     },
     currentEdit: function(){
         let user = Session.get('currentUser')
-        return user._id === this._id
+        if(user === null){
+            return false
+        }
+        else{
+            return user._id === this._id
+        }
     }
 })
 
