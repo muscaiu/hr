@@ -1,5 +1,3 @@
-Meteor.subscribe('allusers')
-
 Template.Users.onCreated(function(){
     this.autorun( () => {
         this.subscribe('allUsers')
@@ -25,6 +23,7 @@ Template.Users.helpers({
     currentEdit: function(){
         let user = Session.get('currentUser')
         if(user === null){
+            console.log('NOOOOOOOOOOOOO')
             return false
         }
         else{
@@ -35,7 +34,7 @@ Template.Users.helpers({
 
 Template.Users.events({
     'click .user_id': function(){
-        console.log(this)
+        //console.log(this)
         Session.set('currentUser', this)
     },
     'click .toggle-admin': function(){
@@ -43,7 +42,7 @@ Template.Users.events({
     },
     'click .close-edit-mode': function(){
         Session.set('currentUser', null)
-    }
+    },
 })
 
 //Moment another more indirect way of using it like in interviu.js
