@@ -1,4 +1,9 @@
-Cvs = new Mongo.Collection('cvs');
+Cvs = new Mongo.Collection('cvs'),
+    CvsIndex = new EasySearch.Index({
+        collection: Cvs,
+        fields : ['name'],
+        engine: new EasySearch.Minimongo()
+    })
 
 Cvs.allow({
     insert: function(userId, doc){
