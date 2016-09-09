@@ -23,7 +23,6 @@ Template.Users.helpers({
     currentEdit: function(){
         let user = Session.get('currentUser')
         if(user === null){
-            console.log('NOOOOOOOOOOOOO')
             return false
         }
         else{

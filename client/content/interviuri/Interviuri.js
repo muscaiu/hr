@@ -1,17 +1,17 @@
 Meteor.subscribe('cvs')
 
-Template.Interviuri.onCreated(function(){
+Template.Interviuri.onCreated(function () {
     var self = this
-    self.autorun(function(){//unsubsribe from old subscriptions
+    self.autorun(function () {//unsubsribe from old subscriptions
         self.subscribe('cvs')
-        self.sortOrder = new ReactiveVar(-1)     
+        self.sortOrder = new ReactiveVar(-1)
     })
 });
 
 Template.Interviuri.helpers({
-    cvs(){
+    cvs() {
         const instance = Template.instance()
-        return Cvs.find({}, {sort: {createdAt: instance.sortOrder.get() } })
+        return Cvs.find({}, { sort: { createdAt: instance.sortOrder.get() } })
     },
     // cvs: () =>{
     //     return Cvs.find({}, {sort: {createdAt: -1}});
@@ -23,7 +23,12 @@ Template.Interviuri.helpers({
     // styleEasySearch: function(){
     //     return {class: 'searchBox'}
     // }
-});
+    searchAttributes() {
+        return {
+            placeholder: 'Search'
+        }
+    }
+})
 
 Template.Interviuri.events({
     'click .new-recipe': () =>
@@ -32,14 +37,14 @@ Template.Interviuri.events({
             'formId': null
         }),
     'click .sorteaza'(event, instance) {
-            instance.sortOrder.set(instance.sortOrder.get() * -1)
-        },
-        // 'click .sorteaza': function(){
-        //     return Cvs.find({}, {sort: {createdAt: 1}})
-        // }
-    'click .searchBox': function(event){
+        instance.sortOrder.set(instance.sortOrder.get() * -1)
+    },
+    // 'click .sorteaza': function(){
+    //     return Cvs.find({}, {sort: {createdAt: 1}})
+    // }
+    'click .searchBox': function (event) {
         var search = {
-            
+
         }
     }
 })
