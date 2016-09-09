@@ -3,8 +3,8 @@
   "servers": [
     {
       "host": "192.168.0.177",
-      "username": "x",
-      "password": "x",
+      "username": "root",
+      "password": "qwer123",
       // or pem file (ssh based authentication)
       // WARNING: Keys protected by a passphrase are not supported
       //"pem": "~/.ssh/id_rsa"
