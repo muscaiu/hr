@@ -6,16 +6,25 @@
         {{> NewCvForm}}
     {{else}}
         {{#if isInRole 'hr, admin'}}
-            <button class="new-recipe">Adauga</button> 
+
+            <!--{{#animate type="bounceInDown" delay="300"}}-->
+               <button class="new-recipe">Adauga</button> 
+            <!--{{/animate}}-->
+
             <!--<select id="category-select">
                 <option disabled="disabled" selected="selected">Please Select</option> 
                 {{#each categories}}
                     <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>-->
+
         {{/if}}
-        <button class="sorteaza">Sorteaza</button>
-<!--Search InputBox-->
+
+        <!--{{#animate type="bounceInDown" delay="300"}}-->
+            <button class="sorteaza">Sorteaza</button>
+        <!--{{/animate}}-->
+
+        <!--Search InputBox-->
         <!--<div class="searchBox pull-right">
             {{> EasySearch.Input index=cvsIndex attributes=searchAttributes }}
         </div>-->
@@ -23,9 +32,20 @@
     {{/if}}
     <section class="cvs">
         {{#if Template.subscriptionsReady}}
-            {{#each cvs}}
-                {{> Interviu}}
-            {{/each}}
+            <!--{{#each cvs}}-->
+
+                <!--{{#animate type="bounceInLeft" delay="200"}}
+                    {{> Interviu}}
+                {{/animate}}-->
+
+                <!--{{#transition in="bounceInLeft" out="bounceOut"}}-->
+                {{#each cvs}}
+                    <!--{{#if instance}}-->
+                        {{> Interviu}}
+                    <!--{{/if }}-->
+                {{/each}}
+                <!--{{/transition}}-->
+            <!--{{/each}}-->
 
 <!--Search Display Results-->
             <!--{{#EasySearch.Each index=cvsIndex }}-->

@@ -2,9 +2,11 @@ Meteor.subscribe('cvs')
 
 Template.Interviuri.onCreated(function () {
     var self = this
+
     self.autorun(function () {//unsubscribe from old subscriptions
         self.subscribe('cvs')
         self.sortOrder = new ReactiveVar(-1)
+        
     })
 })
 
