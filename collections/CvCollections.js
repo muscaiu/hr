@@ -1,9 +1,11 @@
-Cvs = new Mongo.Collection('cvs'),
-    CvsIndex = new EasySearch.Index({
-        collection: Cvs,
-        fields : ['name'],
-        engine: new EasySearch.Minimongo()
-    })
+Cvs = new Mongo.Collection('cvs')
+
+// CvsIndex = new EasySearch.Index({
+//         collection: Cvs,
+//         fields : ['name'],
+//         engine: new EasySearch.Minimongo(),
+//         //sort: () => { createdAt: -1 } 
+//     })
 
 Cvs.allow({
     insert: function(userId, doc){

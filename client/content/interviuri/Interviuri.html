@@ -14,21 +14,23 @@
                 {{/each}}
             </select>-->
         {{/if}}
-        <!--<button class="sorteaza">Sorteaza</button>-->
+        <button class="sorteaza">Sorteaza</button>
 <!--Search InputBox-->
-        <div class="searchBox pull-right">
+        <!--<div class="searchBox pull-right">
             {{> EasySearch.Input index=cvsIndex attributes=searchAttributes }}
-        </div>
+        </div>-->
     
     {{/if}}
     <section class="cvs">
-<!--Search Display Results-->
         {{#if Template.subscriptionsReady}}
-            <!--{{#each cvs}}-->
-            {{#EasySearch.Each index=cvsIndex }}
+            {{#each cvs}}
                 {{> Interviu}}
-            {{/EasySearch.Each}}
-            <!--{{/each}}-->
+            {{/each}}
+
+<!--Search Display Results-->
+            <!--{{#EasySearch.Each index=cvsIndex }}-->
+                <!--{{> Interviu}}-->
+            <!--{{/EasySearch.Each}}-->
 
         {{else}}
             <p>Loading...</p>
