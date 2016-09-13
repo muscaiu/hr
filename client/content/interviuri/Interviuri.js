@@ -1,3 +1,5 @@
+import 'animate.css/animate.css';
+
 Meteor.subscribe('cvs')
 
 Template.Interviuri.onCreated(function () {
@@ -39,7 +41,29 @@ Template.Interviuri.events({
             'newCvForm': true,
             'formId': null
         }),
+
+    // 'click .sorteaza'(event, instance) {
+    //      $('#cvs').addClass('animated bounce')
+    //     instance.sortOrder.set(instance.sortOrder.get() * -1)
+    // }
     'click .sorteaza'(event, instance) {
+
         instance.sortOrder.set(instance.sortOrder.get() * -1)
-    }
+        // if(sortUp == true && sortDown == false){
+        //     $('#cvs').addClass('animated slideInDown')
+        //     sortUp = false
+        //     sortDown = true
+        //     console.log("sortUp " + sortUp)
+        //     console.log("sortDown " + sortDown)
+        // }
+
+        // else if(sortDown == true && sortUp == false){
+        //     $('#cvs').addClass('animated slideInUp')
+        //     sortUp = true
+        //     sortDown = false
+        //     console.log("sortUp " + sortUp)
+        //     console.log("sortDown " + sortDown)
+        // }
+
+     }
 })

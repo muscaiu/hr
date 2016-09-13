@@ -30,24 +30,20 @@
         </div>-->
     
     {{/if}}
-    <section class="cvs">
+    <div class="cvs" id="cvs">
         {{#if Template.subscriptionsReady}}
-            <!--{{#each cvs}}-->
 
-                <!--{{#animate type="bounceInLeft" delay="200"}}
-                    {{> Interviu}}
-                {{/animate}}-->
-
-                <!--{{#transition in="bounceInLeft" out="bounceOut"}}-->
                 {{#each cvs}}
-                    <!--{{#if instance}}-->
                         {{> Interviu}}
-                    <!--{{/if }}-->
                 {{/each}}
-                <!--{{/transition}}-->
-            <!--{{/each}}-->
 
-<!--Search Display Results-->
+                <!--{{#transition in="bounceInLeft" out="bounceOut"}}
+                {{#each cvs}}
+                        <li class="animated out">{{> Interviu}}</li>
+                {{/each}}
+                {{/transition}}-->
+
+            <!--Search Display Results-->
             <!--{{#EasySearch.Each index=cvsIndex }}-->
                 <!--{{> Interviu}}-->
             <!--{{/EasySearch.Each}}-->
@@ -55,7 +51,7 @@
         {{else}}
             <p>Loading...</p>
         {{/if}}
-    </section>
+    </div>
 
 </template>
 
