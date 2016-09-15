@@ -36,21 +36,13 @@ matdutour:popup-confirm
 session 
 jalik:ufs
 jalik:ufs-gridfs
-
 chrismbeckett:toastr
 buishi:autoform-ufs
-
 twbs:bootstrap
 aldeed:autoform-bs-datetimepicker
 tsega:bootstrap3-datetimepicker@=3.1.3_3
-
 momentjs:moment
-
-# meteorhacks:kadira
-# msavin:jetsetter
-
-
-#accounts-ui
+meteorhacks:kadira
 accounts-password
 accounts-base
 alanning:roles
@@ -58,6 +50,7 @@ useraccounts:unstyled
 raix:handlebar-helpers
 fourseven:scss
 
-easy:search
-
-webtempest:animate
+#msavin:jetsetter
+#accounts-ui
+#easy:search
+#webtempest:animate
