@@ -42,7 +42,6 @@ twbs:bootstrap
 aldeed:autoform-bs-datetimepicker
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 momentjs:moment
-meteorhacks:kadira
 accounts-password
 accounts-base
 alanning:roles
@@ -50,6 +49,7 @@ useraccounts:unstyled
 raix:handlebar-helpers
 fourseven:scss
 
+#meteorhacks:kadira
 #msavin:jetsetter
 #accounts-ui
 #easy:search
