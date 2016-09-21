@@ -4,6 +4,7 @@
         <p>E-Mail: <a>{{ cv.email }}</a></p>
         <p>Varsta: {{ cv.age }}</p>
         <p>Sex: {{ cv.sex }}</p>
+        <p>Departament: {{ cv.department }}</p>
         <p>Limbi vorbite:
             <ul>
                 {{#each cv.languages}}
@@ -25,14 +26,14 @@
         <p>{{#if inMenu }} Angajat: Da {{else}} Angajat: Nu {{/if}}
         </p>
         <p>
-            Creat pe: {{ formatDate cv.createdAt 'DD MMMM YYYY HH:mm' }}
+            Data: {{ formatDate cv.createdAt 'DD MMMM YYYY HH:mm' }}
         </p>
         <p>Creat de: {{ cv.author }}</p>
-        <p>Creat de: {{#each getAuthorName }} {{#each emails}} {{address}} {{/each }} {{/each}}
+        <!--<p>Creat de: {{#each getAuthorName }} {{#each emails}} {{address}} {{/each }} {{/each}}
         </p>
         <p>
             {{ getAuthorName }}
-        </p>
+        </p>-->
 
     </article>
 </template>

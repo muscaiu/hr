@@ -1,0 +1,19 @@
+<template name="AngajatiItem">
+    <!--<div class="menu-item">-->
+    <div class="menu-item angajati-item {{classHelper department}}">
+        <h3> {{ name }} </h3>
+        <!--{{#if isInRole 'hr, admin'}}
+            {{#if inMenu}}
+               <i class="fa fa-minus toggle-menu"></i>
+            {{else}}
+                <i class="fa fa-plus toggle-menu"></i>
+           {{/if}}
+        {{/if}}-->
+        <p> {{ email }} </p>
+
+        <!--{{#if isInRole 'hr, admin'}}
+            <i class="fa fa-pencil"></i>
+            <i class="fa fa-trash"></i>
+        {{/if}}-->
+    </div>
+</template>

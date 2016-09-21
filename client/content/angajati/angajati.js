@@ -10,6 +10,9 @@ Template.Angajati.helpers({
     cvs: () => {
         return Cvs.find({inMenu: true});
     },
+    maran: () => {
+        return Cvs.find({department: 'Maran'})
+    }
     // updateCvId: function(){
     //     return this._id;
     // },
@@ -18,7 +21,10 @@ Template.Angajati.helpers({
     // }, 
 });
 
-// Template.AngajatiItem.events({
+Template.Angajati.events({
+    'click .maran': function(){
+    }
+})
 //     'click .toggle-menu': function(){
 //         Meteor.call('toggleMenuItem', this._id, this.inMenu);
 //     },

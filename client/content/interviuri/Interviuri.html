@@ -11,31 +11,32 @@
                <button class="new-recipe">Adauga</button> 
             <!--{{/animate}}-->
 
-            <!--<select id="category-select">
-                <option disabled="disabled" selected="selected">Please Select</option> 
-                {{#each categories}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>-->
-
         {{/if}}
 
-        <!--{{#animate type="bounceInDown" delay="300"}}-->
-            <button class="sorteaza">Sorteaza</button>
-        <!--{{/animate}}-->
+        <button class="sorteaza">Sorteaza</button>
+
+        <!--<select class="sorting sortSelect">
+            <option value="asc">asc</option>
+            <option value="desc">desc</option>
+        </select>-->
 
         <!--Search InputBox-->
-        <!--<div class="searchBox pull-right">
+        <div class="searchBox pull-right">
             {{> EasySearch.Input index=cvsIndex attributes=searchAttributes }}
-        </div>-->
+        </div>
     
     {{/if}}
     <div class="cvs" id="cvs">
         {{#if Template.subscriptionsReady}}
+<!--
+            {{#each cvs}}
+                    {{> Interviu}}
+            {{/each}}-->
 
-                {{#each cvs}}
-                        {{> Interviu}}
-                {{/each}}
+            {{#EasySearch.Each index=cvsIndex }}
+                {{> Interviu}}
+            {{/EasySearch.Each}}
+
 
                 <!--{{#transition in="bounceInLeft" out="bounceOut"}}
                 {{#each cvs}}
@@ -43,10 +44,6 @@
                 {{/each}}
                 {{/transition}}-->
 
-            <!--Search Display Results-->
-            <!--{{#EasySearch.Each index=cvsIndex }}-->
-                <!--{{> Interviu}}-->
-            <!--{{/EasySearch.Each}}-->
 
         {{else}}
             <p>Loading...</p>
@@ -54,5 +51,3 @@
     </div>
 
 </template>
-
-

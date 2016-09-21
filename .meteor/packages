@@ -52,5 +52,7 @@ fourseven:scss
 #meteorhacks:kadira
 #msavin:jetsetter
 #accounts-ui
-#easy:search
 #webtempest:animate
+
+easy:search
+easysearch:elasticsearch

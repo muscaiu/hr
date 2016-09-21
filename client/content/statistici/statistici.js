@@ -14,28 +14,25 @@ Template.Statistici.onRendered(function () {
   const polarArea = new Chart(CHART, {
     type: 'polarArea',
     data: {
-      labels: ["Angajati", "Interviuri", "Maran", "Vodafone"],
+      labels: ["Angajati", "Interviuri", "Maran", "Maran BO", "Vodafone", "Triboo"],
       datasets: [
         {
-          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE55","#E4000F"],
+          backgroundColor: ["#9EEC00", "#999875", "#A1048C", "#FD7300", "#E4000F", "#0067AC"],
           //borderColor: "rgba(75,192,192,1)",
           //hoverBackgroundColor: ["#F90737", "#045891"],
-          data: [0, 0, 0,0],
+          data: [0, 0, 0, 0, 0,0],
         }
       ],
-    },
-    options: {
-      rotation: Math.PI * 3
     }
-
   })
   Tracker.autorun(() => {
-    // polarArea.data.datasets[1].data[0] = 10
-    // polarArea.data.datasets[1].data[1] = 20
     polarArea.data.datasets[0].data[0] = getAngajati()
     polarArea.data.datasets[0].data[1] = getInterviuri()
-    polarArea.data.datasets[0].data[2] = 2
-    polarArea.data.datasets[0].data[3] = 1
+    polarArea.data.datasets[0].data[2] = getMaran()
+    polarArea.data.datasets[0].data[3] = getMaranBO()
+    polarArea.data.datasets[0].data[4] = getVodafone()
+    polarArea.data.datasets[0].data[5] = getTriboo()
+
     polarArea.update()
   })
 })
@@ -45,6 +42,18 @@ function getInterviuri() {
 }
 function getAngajati() {
   return Cvs.find({ inMenu: true }).count()
+}
+function getMaran() {
+  return Cvs.find({inMenu: true, department: 'Maran' }).count()
+}
+function getMaranBO() {
+  return Cvs.find({ inMenu: true, department: 'MaranBO' }).count()
+}
+function getVodafone() {
+  return Cvs.find({ inMenu: true, department: 'Vodafone' }).count()
+}
+function getTriboo() {
+  return Cvs.find({ inMenu: true, department: 'Triboo' }).count()
 }
 ////////////////////// polarArea ///////////////////>
 

@@ -1,34 +1,4 @@
-Cvs = new Mongo.Collection('cvs')
-
-// CvsIndex = new EasySearch.Index({
-//         collection: Cvs,
-//         fields : ['name'],
-//         engine: new EasySearch.Minimongo(),
-//         //sort: () => { createdAt: -1 } 
-//     })
-
-Cvs.allow({
-    insert: function(userId, doc){
-        return !!userId;
-    },
-    update: function(userId, doc){
-        return !!userId;
-    }
-});
-
-//Methods for toggle, delete etc
-Meteor.methods({
-    toggleMenuItem: function(id, currentState){
-        Cvs.update(id,{
-            $set:{
-                inMenu: !currentState
-            }
-        });
-    },
-    deleteCv: function(id){
-        Cvs.remove(id);
-    }
-});
+Cvs = new Mongo.Collection('cvs'),
 
 Experience = new SimpleSchema({
     name: {
@@ -46,7 +16,7 @@ Experience = new SimpleSchema({
         type: String,
         optional: true,
     }
-});
+})
 
 Languages = new SimpleSchema({
     language: {
@@ -59,14 +29,14 @@ Languages = new SimpleSchema({
         type: String,
         optional: true,
     }
-});
+})
 
 CvSchema = new SimpleSchema({
-    name:{
+    name: {
         type: String,
         label: "Nume",
     },
-    email:{
+    email: {
         type: String,
         // regEx: SimpleSchema.RegEx.Email,
         label: "E-mail"
@@ -96,39 +66,54 @@ CvSchema = new SimpleSchema({
             type: "select",
             options: function () {
                 return [
-                {label: "F", value: "F"},
-                {label: "M", value: "M"},
-                ];
+                    { label: "F", value: "F" },
+                    { label: "M", value: "M" },
+                ]
             }
         }
     },
-    experiences:{
+    department: {
+        type: String,
+        label: "Departament",
+        optional: true,
+        autoform: {
+            type: "select",
+            options: function () {
+                return [
+                    { label: "Maran", value: "Maran" },
+                    { label: "Maran BackOffice", value: "MaranBO" },
+                    { label: "Vodafone", value: "Vodafone" },
+                    { label: "Triboo", value: "Triboo" },
+                ]
+            }
+        }
+    },
+    experiences: {
         label: "Experienta",
         type: [Experience],
         optional: true,
     },
-    languages:{
+    languages: {
         label: "Limbi Vorbite",
         type: [Languages],
         optional: true,
-    }
-    ,
-    inMenu:{
+    },
+    inMenu: {
         type: Boolean,
         defaultValue: false,
         optional: true,
-        autoform:{
-            type:"hidden"
+        autoform: {
+            type: "hidden"
         }
     },
     author: {
         type: String,
         label: "Author",
-        autoValue: function(){
+        autoValue: function () {
             return this.userId
         },
-        autoform:{
-            type:"hidden"
+        autoform: {
+            type: "hidden"
         }
     },
     createdAt: {
@@ -143,6 +128,6 @@ CvSchema = new SimpleSchema({
         //     }
         // }
     }
-});
+})
 
-Cvs.attachSchema(CvSchema);
+Cvs.attachSchema(CvSchema)

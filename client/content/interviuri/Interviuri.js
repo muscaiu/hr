@@ -4,35 +4,35 @@ Meteor.subscribe('cvs')
 
 Template.Interviuri.onCreated(function () {
     var self = this
-
-    self.autorun(function () {//unsubscribe from old subscriptions
-        self.subscribe('cvs')
+    self.autorun(function () {
         self.sortOrder = new ReactiveVar(-1)
-        
+
     })
 })
 
 Template.Interviuri.helpers({
     cvs() {
-
         const instance = Template.instance()
-        
-        return Cvs.find({}, { sort: { createdAt: instance.sortOrder.get() } })
+           return Cvs.find({}, { sort: { createdAt: instance.sortOrder.get() } })
     },
+
+    cvsIndex: () => CvsIndex,
+    //     cvsIndex: function(){
+    //     return CvsIndex
+    // } ,
+    searchAttributes() {
+        return {
+            placeholder: 'Search'
+        }
+    },
+
 
     // hrUser: function(){
     //     return Roles.userIsInRole(Meteor.userId(), 'hr');
     // }
-    // styleEasySearch: function(){
-    //     return {class: 'searchBox'}
-    // }
-
-    // cvsIndex: () => CvsIndex,
-    // searchAttributes() {
-    //     return {
-    //         placeholder: 'Search'
-    //     }
-    // }
+    styleEasySearch: function(){
+        return {class: 'searchBox'}
+    },
 })
 
 Template.Interviuri.events({
@@ -42,13 +42,14 @@ Template.Interviuri.events({
             'formId': null
         }),
 
-    // 'click .sorteaza'(event, instance) {
-    //      $('#cvs').addClass('animated bounce')
-    //     instance.sortOrder.set(instance.sortOrder.get() * -1)
-    // }
     'click .sorteaza'(event, instance) {
-
         instance.sortOrder.set(instance.sortOrder.get() * -1)
+        // console.log('cvsindex' + cvsIndex)
+
+        // 'click .sorteaza'(event, instance) {
+        //      $('#cvs').addClass('animated bounce')
+        //     instance.sortOrder.set(instance.sortOrder.get() * -1)
+        // }
         // if(sortUp == true && sortDown == false){
         //     $('#cvs').addClass('animated slideInDown')
         //     sortUp = false
@@ -65,5 +66,5 @@ Template.Interviuri.events({
         //     console.log("sortDown " + sortDown)
         // }
 
-     }
+    }
 })
