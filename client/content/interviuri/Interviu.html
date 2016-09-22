@@ -15,12 +15,13 @@
                 {{> afQuickField name="languages"}}
                 {{> afQuickField name="createdAt" type="bootstrap-datetimepicker"}}
                 <!--{{> afQuickField name="files"}}-->
+            <hr>
             <div class="recipe">
-                <h4>Salvate</h4>
+                <h5>CV-uri Uploadate</h5>
                 {{> fileTable}}
                 {{> uploadForm}} 
             </div>
-                <button type="submit" class="submitClicked">Save</button>
+                <button type="submit" class="submitClicked saveCv">Salveaza</button>
             {{/autoForm}}            
             <br>
         {{else}}
