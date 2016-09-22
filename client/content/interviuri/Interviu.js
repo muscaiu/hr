@@ -38,7 +38,12 @@ Template.Interviu.events({
     },
     'click .submitClicked': function(event, template){
         template.editMode.set(!template.editMode.get())
-    }
+    },
+    // 'click [name=detalii]' : function(){
+    //     console.log(self._id)
+    //     Session.set('formId', self._id)
+    // }
+    
 })
 
 //helper for quickform in CV.html

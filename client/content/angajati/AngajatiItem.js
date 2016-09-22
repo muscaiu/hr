@@ -10,3 +10,6 @@ Template.AngajatiItem.helpers({
             return 'triboo-class'
     }
 })
+Template.registerHelper('formatDate', function(date, format){
+    return moment(new Date(date)).format(format)
+})

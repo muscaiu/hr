@@ -1,6 +1,6 @@
 <template name="DetaliiInterviu">
     <article class="recipe">
-        <h2>Nume: {{ cv.name }}</h2>
+        <h2>{{ cv.name }}</h2>
         <p>E-Mail: <a>{{ cv.email }}</a></p>
         <p>Varsta: {{ cv.age }}</p>
         <p>Sex: {{ cv.sex }}</p>
@@ -34,6 +34,11 @@
         <p>
             {{ getAuthorName }}
         </p>-->
-
+       
+        <div class="recipe">
+            <h4>Salvate</h4>
+            {{> fileTable}}
+            {{> uploadForm}} 
+        </div>
     </article>
 </template>
