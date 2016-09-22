@@ -2,27 +2,46 @@ Template.Angajati.onCreated(function(){
     var self = this;
     self.autorun(function(){
         self.subscribe('cvs')
+        self.sort_by = new ReactiveVar('')
     })
     // this.editMode = new ReactiveVar(false);
-});
+})
 
 Template.Angajati.helpers({
     cvs: () => {
-        return Cvs.find({inMenu: true});
+        const instance = Template.instance()
+        
+        if(instance.sort_by.get() == ''){
+            return Cvs.find({inMenu: true}, {sort: {department : 1}})       
+        }else{
+            return Cvs.find({inMenu: true, department: instance.sort_by.get()})
+        }
     },
-    maran: () => {
-        return Cvs.find({department: 'Maran'})
-    }
+    // maran: () => {
+    // }
     // updateCvId: function(){
     //     return this._id;
     // },
     // editMode: function(){
     //     return Template.instance().editMode.get();
     // }, 
-});
+})
 
 Template.Angajati.events({
-    'click .maran': function(){
+    'click .btn-all'(event, instance){
+        instance.sort_by.set('')
+    },
+    'click .btn-maran'(event, instance){
+        instance.sort_by.set('Maran')
+    },
+    'click .btn-maranbo'(event, instance){
+        instance.sort_by.set('MaranBO')
+    },
+    'click .btn-vodafone'(event, instance){
+        instance.sort_by.set('Vodafone')
+    },
+    'click .btn-triboo'(event, instance){
+        instance.sort_by.set('Triboo')
     }
 })
 //     'click .toggle-menu': function(){

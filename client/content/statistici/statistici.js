@@ -10,14 +10,14 @@ Template.Statistici.onCreated(function () {
 Template.Statistici.onRendered(function () {
   const CHART = document.getElementById('polarArea')
   //Chart.defaults.scale.ticks.beginAtZero = true
-
+  Chart.defaults.global.animation.duration = 2000
   const polarArea = new Chart(CHART, {
     type: 'polarArea',
     data: {
-      labels: ["Angajati", "Interviuri", "Maran", "Maran BO", "Vodafone", "Triboo"],
+      labels: ["Angajati", "Interviuri", "Maran", "Maran BO",  "Triboo", "Vodafone"],
       datasets: [
         {
-          backgroundColor: ["#9EEC00", "#999875", "#A1048C", "#FD7300", "#E4000F", "#0067AC"],
+          backgroundColor: ["#9EEC00", "#999875", "#A1048C", "#FD7300", "#0067AC", "#E4000F"],
           //borderColor: "rgba(75,192,192,1)",
           //hoverBackgroundColor: ["#F90737", "#045891"],
           data: [0, 0, 0, 0, 0,0],

@@ -1,9 +1,10 @@
 <template name="Angajati">
     <h1 class="page-title">Angajati</h1>
-    <button class="new-recipe maran-class">Maran</button>
-    <button class="new-recipe maranbo-class">MaranBO</button>
-    <button class="new-recipe vodafone-class" >Vodafone</button>
-    <button class="new-recipe triboo-class">Triboo</button>
+    <button class="new-recipe all-class btn-all">All</button>
+    <button class="new-recipe maran-class btn-maran">Maran</button>
+    <button class="new-recipe maranbo-class btn-maranbo">MaranBO</button>
+    <button class="new-recipe triboo-class btn-triboo">Triboo</button>
+    <button class="new-recipe vodafone-class btn-vodafone" >Vodafone</button>
 
     {{#each cvs}}
         {{> AngajatiItem}}
