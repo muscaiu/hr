@@ -1,8 +1,7 @@
 <template name="Interviu">
     <article class="recipe{{#if inMenu}} in-menu {{/if}} ">
-        <h3>{{name}}</h3> 
+        <h3><a href="/interviu/{{_id}}">{{name}}</a> </h3> {{formatDate createdAt 'DD MMMM YYYY'}}
         <!--<h3>{{name}} - {{formatDate createdAt 'DD MMMM YYYY'}}</h3> -->
-        <a href="/interviu/{{_id}}">Detalii</a>
         <!--Show Edit Form if editMode = true-->
         {{#if editMode}}
             {{#autoForm id="updateCvId" type="update" collection="Cvs" doc = this}}
@@ -15,12 +14,12 @@
                 {{> afQuickField name="languages"}}
                 {{> afQuickField name="createdAt" type="bootstrap-datetimepicker"}}
                 <!--{{> afQuickField name="files"}}-->
-            <hr>
+            <!--<hr>
             <div class="recipe">
                 <h5>CV-uri Uploadate</h5>
                 {{> fileTable}}
                 {{> uploadForm}} 
-            </div>
+            </div>-->
                 <button type="submit" class="submitClicked saveCv">Salveaza</button>
             {{/autoForm}}            
             <br>

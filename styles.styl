@@ -333,18 +333,21 @@ input, select, textarea
     shadow-level(1)
     trans()
     .btn-primary, .btn-deny
-
+    a
+        text-decoration none
     &.in-menu
         background dark-purp
         color white
         h3
-            border-bottom: rgba(255,255,255, 0.6) solid 2px
+            //border-bottom: rgba(255,255,255, 0.6) solid 2px
+        a
+            color white
     h3
         font-size: 25px
-        border-bottom: rgba(0,0,0, 0.3) solid 2px
+        //border-bottom: rgba(0,0,0, 0.3) solid 2px
         margin-top 0
         margin-bottom 10px 
-        opacity 0.6
+        opacity 0.8
     h4
         font-size: 2em
         border-bottom: rgba(0,0,0, 0.3) solid 2px
@@ -358,38 +361,40 @@ input, select, textarea
         &:hover
             color white
     .fa-trash, .fa-pencil, .fa-plus, .fa-minus
-        opacity 0.5
-        cursor pointer
-        position absolute
-        top 0
-        right 0
-        font-size 1.6em  
-        display block
-        padding-right 20px 
-        padding-top 5px 
-        color black
-        trans()
-        &:hover
-            color red 
-            opacity 0.6
-    .fa-pencil
-        right 40px
-        &:hover
-            color blue
-    .fa-plus
-        right 80px
-        &:hover
-            color lime
-    .fa-minus
-        right 80px
-        &:hover
-            color red
+        display none
     .ingredient
         display inline-block
         margin-right 10px 
         font-size 1.2em 
     &:hover 
         shadow-level(3)
+        .fa-trash, .fa-pencil, .fa-plus, .fa-minus
+            opacity 0.5
+            cursor pointer
+            position absolute
+            top 0
+            right 0
+            font-size 1.6em  
+            display block
+            padding-right 20px 
+            padding-top 5px 
+            color black
+            trans()
+            &:hover
+                color red 
+                opacity 0.6
+        .fa-pencil
+            right 40px
+            &:hover
+                color blue
+        .fa-plus
+            right 80px
+            &:hover
+                color lime
+        .fa-minus
+            right 80px
+            &:hover
+                color red
         // animation card 0.6s ease 1 forwards
     th, td
         color black
@@ -500,18 +505,18 @@ table
         &.static-input
             border none
             background transparent
-.all-class
-        background white
-        color black
-.maran-class
-        background #A1048C
-.maranbo-class
-        background #FD7300
-.vodafone-class
-        background #E4000F
-.triboo-class
-        background #0067AC
-.angajati-item
-        color white
+//.all-class
+//        background white
+//        color black
+//.maran-class
+//        background #A1048C
+//.maranbo-class
+//        background #FD7300
+//.vodafone-class
+//        background #E4000F
+//.triboo-class
+//        background #0067AC
+//.angajati-item
+//        color white
 .angajati-date
     opacity 0.6

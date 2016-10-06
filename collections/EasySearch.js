@@ -33,5 +33,5 @@ CvsIndex = new EasySearch.Index({
             //     throw new Meteor.Error('Invalid sort')
             // }
         //}
-    })
+})
 // })
